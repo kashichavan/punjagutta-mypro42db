@@ -1,0 +1,33 @@
+Creating models[Tables] to Store The Data
+-------------------------------------------
+
+step 1) create an app and register it
+
+step 2) in app there is file models.py open the file
+
+step 3) create a class ,that class need to inherit from models.Model class
+
+	class Student(models.Model):
+			pass
+
+step 4) create required columns[fields ] inside the created class as 
+variables
+
+	class Student(models.Model):
+    		# colName= models.FieldName()
+    		name=models.CharField(max_length=25)
+    		age=models.IntegerField()
+    		address=models.CharField(max_length=25)
+
+step 5) now generated python need to be converted as SQL code by using 
+command 
+	python manage.py makemigrations
+
+note to see sql code:
+		python manage.py sqlmigrate appName 0001
+
+
+step 6) the generated sql code neeed to executed as Query so to do that 
+give migrate command
+
+	python manage.py mig
